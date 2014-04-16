@@ -279,7 +279,7 @@ if ($method == 'POST') {
 <div id="footer">
 	<a
 		title="Veja o código-fonte deste webapp e me ajude a melhorá-lo!"
-		href="http://code.google.com/p/funcoeszz/source/browse/trunk/web/online/index.php">PHP-HTML-CSS</a>
+		href="https://github.com/funcoeszz/website/blob/master/online/index.php">PHP-HTML-CSS</a>
 	por
 	<a
 		title="Quer ajuda? Tem uma sugestão? Achou uma brecha na segurança? Fale comigo no twitter."
