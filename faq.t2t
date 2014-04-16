@@ -1,0 +1,223 @@
+FAQ das Funções ZZ
+
+
+%!includeconf: _config.t2t
+%!options: --toc --toc-level 2
+
+% Set page ID
+%!postproc: <BODY <BODY id="faq"
+
+%!include: _menu.t2t
+
+
+%%TOC
+
+
+== Por que o nome Funções ZZ? ==[nome]
+
+O nome é _ZZ porque todas as funções chamam-se zz-alguma-coisa :)
+
+Já este prefixo zz, é necessário para evitar que o nome de uma função seja confundido com algum comando já existente no sistema. Na época (ano de 2000), não achei nenhum comando em minha máquina (Linux), que começava com zz. Por isso escolhi este prefixo.
+
+
+== Quais são as funções disponíveis? ==[lista-funcoes]
+
+Veja a [lista completa list.html] aqui no site.
+
+Em sua máquina, chame a função ``zzzz``, que lista todas as funções. Ou ainda, digite zz e aperte o TAB duas vezes:
+
+``` prompt$ zz<tab><tab>
+
+
+== Quais opções posso usar em uma função? ==[opcoes]
+
+Chame a função e use a opção ``-h`` (ou ``--help``) para ver o texto de ajuda. Por exemplo:
+
+```
+prompt$ zzsenha -h
+
+zzsenha
+Gera uma senha aleatória de N caracteres únicos (não repetidos).
+Obs.: Sem opções, a senha é gerada usando letras e números.
+
+Opções: -p, --pro   Usa letras, números e símbolos para compor a senha
+        -n, --num   Usa somente números para compor a senha
+
+Uso: zzsenha [--pro|--num] [n]     (padrão n=8)
+Ex.: zzsenha
+     zzsenha 10
+     zzsenha --num 9
+     zzsenha --pro 30
+
+prompt$
+```
+
+
+== Como saber se eu possuo todos os comandos necessários? ==[requisitos]
+
+Use a opção ``--teste`` da função zzzz para que seja feita uma verificação de todos os comandos necessários para o funcionamento das _ZZ.
+
+```
+prompt$ zzzz --teste
+Procurando o comando awk...   OK
+Procurando o comando bc...    OK
+Procurando o comando cat...   OK
+Procurando o comando chmod... OK
+Procurando o comando clear... OK
+Procurando o comando cp...    OK
+Procurando o comando cpp...   OK
+Procurando o comando cut...   OK
+Procurando o comando diff...  OK
+Procurando o comando du...    OK
+Procurando o comando find...  OK
+Procurando o comando grep...  OK
+Procurando o comando lynx...  OK
+Procurando o comando mv...    OK
+Procurando o comando od...    OK
+Procurando o comando play...  OK
+Procurando o comando rm...    OK
+Procurando o comando sed...   OK
+Procurando o comando sleep... OK
+Procurando o comando sort...  OK
+Procurando o comando tr...    OK
+Procurando o comando uniq...  OK
+Verificando a codificação do sistema... UTF-8
+Verificando a codificação das Funções ZZ... UTF-8
+prompt$
+```
+
+
+% == Como saber se há uma versão nova das funções? ==[versao-nova]
+% 
+% Use a opção --atualiza da função zzzz para que seja feita a verificação se há alguma versão nova das _ZZ. Se houver uma versão nova, ela será baixada automaticamente.
+% 
+% ```
+% prompt$ zzzz --atualiza
+% Procurando a versão nova, aguarde.
+% versão local : 7.7
+% versão remota: CURRENT
+% 
+% Baixando a versão nova... PRONTO!
+% Arquivo 'funcoeszz-CURRENT' baixado, instale-o manualmente.
+% O caminho atual é /usr/bin/funcoeszz
+% ```
+
+
+== Como usar as Funções ZZ no ksh, csh ou outro shell? ==[outro-shell]
+
+Se você usa outro shell, ainda assim pode utilizar as _ZZ, desde que o shell Bash também esteja instalado em sua máquina.
+
+=== tcsh ===
+
+Use o seguinte comando para instalar as funções em seu ``~/.tcshrc``:
+
+``` prompt$ zzzz --tcshrc
+
+=== zsh ===
+
+Use o seguinte comando para instalar as funções em seu ``~/.zshrc``:
+
+``` prompt$ zzzz --zshrc
+
+=== Outros ===
+
+Crie um alias para as funções, chamado zz:
+
+``` alias zz="/home/FULANO/bin/funcoeszz"
+
+	Nota: Use a sintaxe do seu shell. Este exemplo está em Bash.
+
+Feito o alias, agora você pode chamar as funções dessa maneira:
+
+```
+zz cores
+zz calcula 2 + 2
+zz ipinternet
+```
+
+E assim por diante, é só lembrar do espaço após o zz.
+
+
+== Erro: Comando não encontrado (command not found)==[comando-faltando]
+
+As funções utilizam vários comandos do sistema para desempenhar suas tarefas. Eles precisam estar instalados em sua máquina para que as funções funcionem corretamente.
+
+Se apareceu uma mensagem na tela dizendo quem um comando não foi encontrado, será preciso instalá-lo.
+
+Para saber quais comandos estão faltando em seu sistema, faça:
+
+``` prompt$ zzzz --teste
+
+[Saiba mais... #requisitos]
+
+
+== Erro: lynx: Opção desconhecida -post-data ==[lynx-post-data]
+
+Você possui uma versão antiga do navegador lynx, que ainda não entende a  opção ``-post-data``, necessária para o funcionamento de algumas funções.
+
+Atualize o programa lynx para a versão 2.8.4 ou outra mais recente.
+
+
+== Minha empresa usa proxy! ==[proxy]
+
+Caso você utilize proxy para acesso à Internet, o lynx precisa saber disso. Coloque as seguintes linhas no final de seu arquivo ``~/.bashrc``, indicando o endereço do servidor proxy (pode ser o domínio ou o endereço IP) e a porta:
+
+```
+export http_proxy=http://proxy.dominio.com.br:3128
+export https_proxy=http://proxy.dominio.com.br:3128
+```
+
+
+== Minha empresa usa proxy autenticado com senha! ==[proxy-senha]
+
+Primeiro, defina o endereço e porta do proxy, como explicado na dica anterior. Então crie um alias em seu ``~/.bashrc`` para que o lynx sempre seja chamado com seu usuário e senha, de maneira transparente:
+
+``` alias lynx="lynx -pauth=usuario:senha"
+
+Se você usa wget em vez do lynx, a sintaxe é esta:
+
+``` wget --proxy-user="usuario" --proxy-password="senha"
+
+
+== Não entendi nada desse negócio de UTF-8 e ISO-8859-1 ==[utf-vs-iso]
+
+Tudo bem, não é preciso :)
+
+Se as letras acentuadas áéíóú aparecem normalmente, você está com a versão certa das _ZZ. Mas se os acentos aparecem estranhos, será preciso baixar outra versão.
+
+Para tirar a dúvida, execute o comando zzzz --teste e veja os resultados do teste de codificação:
+
+```
+prompt$ zzzz --teste
+...
+Verificando a codificação do sistema... UTF-8
+Verificando a codificação das Funções ZZ... UTF-8
+$
+```
+
+Quando as codificações do sistema e das funções estão iguais, tudo vai funcionar corretamente. Neste exemplo, ambas estavam em UTF-8.
+
+Quando há uma incompatibilidade, será mostrada uma mensagem informando se você deve baixar as funções na versão UTF-8 ou ISO-8859-1. Veja um exemplo:
+
+```
+prompt$ zzzz --teste
+...
+Verificando a codificaÃ§Ã£o do sistema... ISO-8859-1
+Verificando a codificaÃ§Ã£o das FunÃ§Ãµes ZZ... UTF-8
+
+**Atencao**
+Ha uma incompatibilidade de codificacao.
+Baixe as Funcoes ZZ versao ISO-8859-1.
+
+$
+```
+
+
+% Se para você for um problema colocar a chamada das funções no seu ``.bashrc`` (gdm parece ser um exemplo), coloque ao invés um alias para digitar **zz** e ativar as funções:
+% 
+% ``` alias zz="source /usr/bin/funcoeszz"
+
+
+
+%!include: _footer.t2t
+%!include: ''_comments.html''

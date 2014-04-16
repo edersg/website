@@ -1,0 +1,15 @@
+txt2tags acessivel.t2t
+txt2tags anuncio-13.2.t2t
+txt2tags aovivo.t2t
+txt2tags changelog.t2t
+txt2tags donate.t2t
+txt2tags download.t2t
+txt2tags faq.t2t
+txt2tags hist.t2t
+txt2tags index.t2t
+txt2tags list.t2t
+txt2tags logo.t2t
+txt2tags man.t2t
+txt2tags my.t2t
+txt2tags premio.t2t
+txt2tags thanks.t2t

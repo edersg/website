@@ -1,0 +1,24 @@
+
+%!target: html
+%!encoding: UTF-8
+%!options: --css-sugar
+%!includeconf: _config-theme.t2t
+%!style: _site.css
+
+%!preproc : _ZZ             Funções ZZ
+%!preproc : _ONLINE_URL     http://funcoeszz.net/online/
+%!preproc : _ITUNES_URL     http://itunes.apple.com/br/app/funcoes-zz/id492258680?mt=8
+%!preproc : _GITHUB_URL     https://github.com/funcoeszz/funcoeszz
+
+%%% Mark prompt and typed text in examples, also "zzfoo" links to manual section about it
+%
+% Example:
+%   prompt$ zzbyte 2 G M
+%   <span class="prompt">prompt$</span><span class="command"> <span class="command-zz">zzbyte</span> 2 G M</span>
+%
+%   prompt$ zzbyte 2 G M    # quantos megas há em 2GB?
+%   <span class="prompt">prompt$</span><span class="command"> <span class="command-zz">zzbyte</span> 2 G M    <span class="comment"># quantos megas há em 2GB?</span></span>
+%
+%!postproc: '(prompt\$ .*   +)(# .*)'	'\1<span class="comment">\2</span>'
+%!postproc: '(prompt\$.* )(zz\w+)(.*)'	'\1<span class="command-zz"><a href="man.html#\2">\2</a></span>\3'
+%!postproc: '(prompt\$)( .*)'		'<span class="prompt">$</span><span class="command">\2</span>'

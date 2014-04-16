@@ -1,0 +1,8 @@
+# IMPORTANT: GitHub Pages do not support htaccess :(
+
+# Tenho que desligar, senão estraga o download da versão atual
+# Use a URL do GitHub pra mostrar o código
+# ForceType text/plain
+
+# Ordena por data, que por nome fica baguncado
+IndexOrderDefault ascending date

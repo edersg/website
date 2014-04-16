@@ -1,0 +1,4 @@
+/.rsync-exclude
+/diff
+/rsync
+/upload

@@ -1,0 +1,51 @@
+Logotipo / ícone das Funções ZZ
+
+
+%!includeconf: _config.t2t
+
+% Set page ID
+%!postproc: <BODY <BODY id="logo"
+
+% Autolink _foo.png images
+%!preproc: '\[_(.*?)\]'	'[[img/logo/zzlogo-\1] img/logo/zzlogo-\1]'
+
+%!include: _menu.t2t
+
+
+Ajude-nos a divulgar as _ZZ!
+
+
+== Ícone oficial (256×256) ==
+
+[img/icon/256.png]
+
+
+== Variação de cores no ícone ==
+
+ | [_brasil.png]  | [_girl.png] | [_che.png]
+ | Brasil         | meninas     | Che
+ | [_pb.png]      | [_roxo.png] | [_flickr.png]
+ | preto e branco | roxinho     | flickr
+
+ | [[img/logo/cores.png] logomatico.html] |
+ | [Faça sua própria combinação de cores! logomatico.html] |
+
+% [_comida.png]
+
+
+== Canivete Suíço ==
+
+[img/canivete-funcoeszz.png]
+
+[img/canivete-zz.png]
+
+
+== Autoria ==
+
+- O ícone foi criado por **Leonardo Boiko**, que ganhou [o concurso promovido no blog http://aurelio.net/blog/2008/08/04/funcoes-zz-crie-um-icone-e-ganhe-um-livro-autografado/].
+- O canivete suíço foi criado por **Henrique Araujo**.
+- Veja quais foram as [outras propostas enviadas concurso-logo.html].
+-
+
+
+%!include: _footer.t2t

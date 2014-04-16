@@ -1,0 +1,152 @@
+Agradecimentos — Funções ZZ
+
+
+%!includeconf: _config.t2t
+
+% Remove notes from output
+%!postproc: ' # .*'	''
+
+%!include: _menu.t2t
+
+
+Um agradecimento especial ao [Thobias Salazar Trevisan http://thobias.org], super parceiro de [programação "ao vivo" aovivo.html] que tocou comigo as _ZZ [de 2002 a 2006 hist.html#thobias], dedicando incontáveis horas ao projeto. Ele é autor de diversas funções [avançadas _GITHUB_URL/blob/master/zz/zzcalculaip.sh] que estão aí até hoje funcionando bem. Valeu Tchê!
+
+Outro agradecimento especial ao [Itamar Santos de Souza https://github.com/itamarnet], que desde 2009 está muito ativo no projeto, criando várias funções novas, corrigindo problemas e empurrando as ZZ além das fronteiras, com suas criações [insanas _GITHUB_URL/blob/master/zz/zzmat.sh] :)
+
+A vocês que contribuíram com dicas, ideias, informações, bug reports e código: **MUITO OBRIGADO!**
+
++ Ademar de Souza Reis Jr.  # zzkill
++ Alexandre Brodt Fernandes  # zz
++ Alfredo Kojima  # link zzlocale
++ Alvaro Nunes Melo
++ Andreas Christian Hasenack
++ André Martin
++ Anselmo Zago
++ Antônio Rogério Lins de A. Pessoa
++ Arkanon  # zz
++ Arnaldo Carvalho de Melo "acme"
++ Ataliba Teixeira
++ Augusto Campos  # divulgação
++ Bernardo Silveira
++ broonu
++ Bruno Buys  # testes Debian e Fedora
++ Bruno T. Russo
++ Caio Begotti  # logos ASCII, divulgação
++ Carlos Laviola
++ Cesar Gimenes  # zz
++ Claudio Matsuoka
++ Cristiano Villela
++ César A. K. Grossmann
++ Daniel Zilli
++ Deadcow
++ Denilson F. de Sá
++ Denis Dias de Lima  # zzbovespa
++ Diogo Gullit  # zz
++ Dirceu Pauka
++ Djony Weverton Tambosi  # compat SED antigo, testes FreeBSD
++ Douglas A. Augusto
++ Douglas José  # testes Cygwin
++ Duke
++ Eder L. Marques  # Pacote Debian, manpage (en, pt)
++ Edson Ramiro  # zz
++ Elias Junior
++ Eliphas Levy Theodoro
++ Elton Simões Baptista  # zz
++ Emilio Wuerges
++ Eri Ramos Bastos  # zz
++ Eustáquio Rangel "TaQ"  # zz
++ Fabiano S. Carvalho
++ Fabio Henrique
++ Fabio J. Augusto  # problemas com UTF
++ Fabio Victorelli
++ Felipe Arruda  # zz
++ Felipe Carvalho
++ Felipe Nascimento Silva Pena  # zz
++ Felipe Nogaroto Gonzalez
++ Fernando Aires  # zz
++ Fernando Braga
++ Fernando Mercês  # zz
++ Fernando Roxo
++ Frederico Bohne Espinosa  # campanha logo
++ Frederico Freire Boaventura  # zz
++ Frederico Spengler
++ Georges Kallás
++ Geraldo Amaral Filho
++ Guilherme Magalhães Gall  # zz
++ Guilherme Wünsch Manika "gwm"
++ Helio Chissini de Castro
++ Henrique Araujo  # logo canivete
++ Henrique Cabral  # ZZ Online
++ Hildebrando Rosa Júnior
++ Hugo Leonardo de Oliveira Melo
++ Humberto Sartini
+% + Itamar @itamarnet  # zz, co-autor
++ José Inácio Coelho "jic"
++ João Bernardo Vianna - @jbvsmo  # wrapper Python
++ João Paulo Brígido Tostes "copag"
++ Julio Cezar Neves
++ Kl0nEz  # zz
++ Kyller Costa Gorgônio  # zz
++ Lauro Cavalcanti de Sa  # zz
++ Leonardo "leo55"
++ Leonardo Boiko  # ícone
++ Leonardo Fontenelle
++ Leonardo Serra  # GPL
++ Leslie Harlley Watter  # zz, favicon, testes SuSE
++ Lincoln Brito
++ Lourival "lori"
++ Lucas Graebin
++ Luciano Espírito Santo  # zz, testes Slackware
++ Maicon Junches
++ Marcell S. Martini  # zz
++ Marcelo Subtil Marçal  # zz
++ Marcio Rosa da Silva
++ Marcos Bordon
++ Marcos Polidoro  # ideia zzloteria
++ Marcos Samsoniuk
++ Mateus Lago
++ Matheus Zeuch
++ Moyses P. R.
++ Nexsbr
++ nic
++ Nivaldo Arruda
++ Osvaldo Santana Neto
++ Paulo A. Hypolito Rodrigues
++ Paulo Henrique
++ Paulo Ricardo Paz Vital  # favicon, CSS, testes Debian
++ Piero
++ Rafael Machado Casali  # zz
++ Rafael Marin
++ Raul Dias
++ Ricardo R. Hoffmann
++ Rivanor P. Soares
++ Roberto Alcântara Filho
++ Rodolfo Bianchi
++ Rodolfo de Faria  # zz
++ Rodrigo Azevedo  # testes Ubuntu
++ Rodrigo Bernardo Pimentel "rbp" ([colaborador premiado premio.html]) # zz, zzbot, >&-
++ Rodrigo Carvalhaes
++ Rodrigo Missiaggia  # zz, zzcelulartim
++ Rodrigo Nakabashi
++ Rodrigo Parra Novo "rodarvus"
++ Rodrigo Pereira da Cunha  # zz
++ Rodrigo Stulzer Lopes  # zz
++ Rubens Queiroz de Almeida  # divulgação
++ Sandro Valentim
++ Sergio "Blinox"
++ Sérgio Devojno Bruder
++ Thiago Moura Witt  # zz
+% + Thobias Salazar Trevisan  # zz, co-autor
++ Tiago Madeira  # testes Gentoo
++ Tiago Oliveira de Jesus
++ Ulysses Almeida
++ Vinicius Della Libera
++ Vinícius Venâncio Leite  # zz
++ Vlademir Moraes
++ Wanderlei Cavassin
++
+
+Que tal você também nos ajudar? [Avise-nos de problemas _GITHUB_URL/issues], [dê sugestões _GITHUB_URL/issues/new], [inscreva-se no fórum http://br.groups.yahoo.com/group/zztabtab/] ou [faça a sua própria Função ZZ my.html]! Se ficar na dúvida, fale direto comigo no twitter: [@oreio http://twitter.com/oreio].
+
+
+%!include: _footer.t2t

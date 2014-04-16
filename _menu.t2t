@@ -1,0 +1,33 @@
+
+''' <div class="menu">
+
+[$HOME /]
+
++ /run
+  - [online /online/]
+  - [download download.html]
+%   - [iOS app _ITUNES_URL]
++ /doc
+  - [zz* list.html]
+  - [man man.html]
+  - [FAQ faq.html]
+  - [changelog changelog.html]
+  - [13 anos! hist.html]
++ /dev
+  - [GitHub _GITHUB_URL]
+  - [sua ZZ my.html]
+  - [logo logo.html]
+  - [doações donate.html]
+  - [valeu! thanks.html]
++ /chat
+  - [bugs _GITHUB_URL/issues]
+  - [ideias _GITHUB_URL/issues/new]
+  - [fórum http://br.groups.yahoo.com/group/zztabtab/]
+  - [@oreio http://twitter.com/oreio]
+
+
+% [img/zzbotao.gif]
+% + [img/logo-64.png]
+
+''' </div><div id="content">
+% Fecha .menu

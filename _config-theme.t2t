@@ -1,0 +1,23 @@
+
+%%% Clean 2012 theme config
+
+% CSS files
+%!style: http://aurelio.net/include/clean-2012/base.css
+%!style: http://aurelio.net/include/clean-2012/article.css
+
+% meta: author
+%!postproc: (<HEAD>)	\1\n<meta name="author" content="Aurelio Jargas">
+
+% fav icon
+%!postproc: (</HEAD>)  <link rel="shortcut icon" href="/img/favicon.png">\n\1
+
+% smartphones viewport
+%!postproc: (</HEAD>)  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n\1
+
+% DIVs: header, main
+%!postproc: '<DIV CLASS="header" ID="header">'	'<DIV ID="header">'
+%!postproc: '<DIV CLASS="body" ID="body">'	'<DIV ID="main">'
+
+% auto-link for H2, H3
+%!postproc: '(<H[23] ID="(.+?)">)(.+?)(</H[23]>)'   '\1<a href="#\2">\3</a>\4' 
+

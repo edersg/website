@@ -1,0 +1,21 @@
+Lista de todas as Funções ZZ
+
+
+%!includeconf: _config.t2t
+
+% Set page ID
+%!postproc: <BODY <BODY id="list"
+
+% Auto-link to man section
+%!preproc: '(\| )(zz\w+)'	\1[\2 man.html#\2]
+
+%!include: _menu.t2t
+
+
+% Segue a lista completa e atualizada de todas as funções disponíveis. Para saber mais detalhes sobre as funções, exemplos de uso e quais as opções disponíveis, consulte a zzajuda.
+
+ || Nº | Nome | Descrição
+%!include: _list.t2t
+
+
+%!include: _footer.t2t

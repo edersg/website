@@ -1,0 +1,45 @@
+# IMPORTANT: GitHub Pages do not support htaccess :(
+
+Options +Indexes
+
+# download
+Redirect temp /funcoeszz /download/funcoeszz-13.2.sh
+Redirect temp /funcoeszz-iso /download/funcoeszz-13.2-iso.sh
+
+# moved
+Redirect permanent /zzaovivo.html /aovivo.html
+Redirect permanent /visitas.php3 /recados.php
+
+# 2013-02-22
+Redirect permanent /doacao.html /donate.html
+Redirect permanent /minhazz.html /my.html
+Redirect permanent /todas.html /list.html
+Redirect permanent /zzajuda.html /man.html
+# 2013-03-01
+Redirect permanent /instalacao.html /download.html
+Redirect permanent /historia.html /hist.html
+Redirect permanent /funcoeszz.html https://github.com/funcoeszz/funcoeszz/blob/master/funcoeszz
+
+# 2013-03-01
+# /passado/funcoeszz-5.0630 -> /download/funcoeszz-5.0630.sh
+RedirectMatch permanent "/passado/(funcoeszz-.*)" /download/$1.sh
+Redirect permanent /passado /download
+
+# 2013-03-01
+# Gone
+Redirect gone /404.html
+Redirect gone /ajude.html
+Redirect gone /blog.html
+Redirect gone /equipe.html
+Redirect gone /exemplos.html
+Redirect gone /extra.html
+Redirect gone /forum.html
+Redirect gone /messenger.html
+Redirect gone /teste.html
+
+# 2014-04-15
+Redirect permanent /locales.txt https://raw.githubusercontent.com/funcoeszz/funcoeszz/master/local/zzlocale.txt
+Redirect permanent /recompensa.html /acessivel.html
+Redirect gone /camiseta.html
+Redirect gone /img/camiseta/
+Redirect gone /img/equipe/

@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<meta name="author" content="Aurelio Jargas">
+<META NAME="generator" CONTENT="http://txt2tags.org">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<LINK REL="stylesheet" TYPE="text/css" HREF="http://aurelio.net/include/clean-2012/base.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="http://aurelio.net/include/clean-2012/article.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="_site.css">
+<TITLE>FAQ das Funções ZZ</TITLE>
+<link rel="shortcut icon" href="/img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</HEAD>
+<BODY id="faq">
+
+<DIV ID="header">
+<H1>FAQ das Funções ZZ</H1>
+</DIV>
+
+<DIV ID="main">
+<div class="menu">
+<P>
+<A HREF="/">$HOME</A>
+</P>
+
+<OL>
+<LI>/run
+  <UL>
+  <LI><A HREF="/online/">online</A>
+  <LI><A HREF="download.html">download</A>
+  </UL>
+<LI>/doc
+  <UL>
+  <LI><A HREF="list.html">zz*</A>
+  <LI><A HREF="man.html">man</A>
+  <LI><A HREF="faq.html">FAQ</A>
+  <LI><A HREF="changelog.html">changelog</A>
+  <LI><A HREF="hist.html">13 anos!</A>
+  </UL>
+<LI>/dev
+  <UL>
+  <LI><A HREF="https://github.com/funcoeszz/funcoeszz">GitHub</A>
+  <LI><A HREF="my.html">sua ZZ</A>
+  <LI><A HREF="logo.html">logo</A>
+  <LI><A HREF="donate.html">doações</A>
+  <LI><A HREF="thanks.html">valeu!</A>
+  </UL>
+<LI>/chat
+  <UL>
+  <LI><A HREF="https://github.com/funcoeszz/funcoeszz/issues">bugs</A>
+  <LI><A HREF="https://github.com/funcoeszz/funcoeszz/issues/new">ideias</A>
+  <LI><A HREF="http://br.groups.yahoo.com/group/zztabtab/">fórum</A>
+  <LI><A HREF="http://twitter.com/oreio">@oreio</A>
+  </UL>
+</OL>
+
+</div><div id="content">
+<DIV CLASS="toc">
+
+    <UL>
+    <LI><A HREF="#nome">Por que o nome Funções ZZ?</A>
+    <LI><A HREF="#lista-funcoes">Quais são as funções disponíveis?</A>
+    <LI><A HREF="#opcoes">Quais opções posso usar em uma função?</A>
+    <LI><A HREF="#requisitos">Como saber se eu possuo todos os comandos necessários?</A>
+    <LI><A HREF="#outro-shell">Como usar as Funções ZZ no ksh, csh ou outro shell?</A>
+    <LI><A HREF="#comando-faltando">Erro: Comando não encontrado (command not found)</A>
+    <LI><A HREF="#lynx-post-data">Erro: lynx: Opção desconhecida -post-data</A>
+    <LI><A HREF="#proxy">Minha empresa usa proxy!</A>
+    <LI><A HREF="#proxy-senha">Minha empresa usa proxy autenticado com senha!</A>
+    <LI><A HREF="#utf-vs-iso">Não entendi nada desse negócio de UTF-8 e ISO-8859-1</A>
+    </UL>
+
+</DIV>
+
+<H2 ID="nome"><a href="#nome">Por que o nome Funções ZZ?</a></H2>
+
+<P>
+O nome é Funções ZZ porque todas as funções chamam-se zz-alguma-coisa :)
+</P>
+<P>
+Já este prefixo zz, é necessário para evitar que o nome de uma função seja confundido com algum comando já existente no sistema. Na época (ano de 2000), não achei nenhum comando em minha máquina (Linux), que começava com zz. Por isso escolhi este prefixo.
+</P>
+
+<H2 ID="lista-funcoes"><a href="#lista-funcoes">Quais são as funções disponíveis?</a></H2>
+
+<P>
+Veja a <A HREF="list.html">lista completa</A> aqui no site.
+</P>
+<P>
+Em sua máquina, chame a função <CODE>zzzz</CODE>, que lista todas as funções. Ou ainda, digite zz e aperte o TAB duas vezes:
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> zz&lt;tab&gt;&lt;tab&gt;</span>
+</PRE>
+
+<H2 ID="opcoes"><a href="#opcoes">Quais opções posso usar em uma função?</a></H2>
+
+<P>
+Chame a função e use a opção <CODE>-h</CODE> (ou <CODE>--help</CODE>) para ver o texto de ajuda. Por exemplo:
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> <span class="command-zz"><a href="man.html#zzsenha">zzsenha</a></span> -h</span>
+
+zzsenha
+Gera uma senha aleatória de N caracteres únicos (não repetidos).
+Obs.: Sem opções, a senha é gerada usando letras e números.
+
+Opções: -p, --pro   Usa letras, números e símbolos para compor a senha
+        -n, --num   Usa somente números para compor a senha
+
+Uso: zzsenha [--pro|--num] [n]     (padrão n=8)
+Ex.: zzsenha
+     zzsenha 10
+     zzsenha --num 9
+     zzsenha --pro 30
+
+prompt$
+</PRE>
+
+<H2 ID="requisitos"><a href="#requisitos">Como saber se eu possuo todos os comandos necessários?</a></H2>
+
+<P>
+Use a opção <CODE>--teste</CODE> da função zzzz para que seja feita uma verificação de todos os comandos necessários para o funcionamento das Funções ZZ.
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> <span class="command-zz"><a href="man.html#zzzz">zzzz</a></span> --teste</span>
+Procurando o comando awk...   OK
+Procurando o comando bc...    OK
+Procurando o comando cat...   OK
+Procurando o comando chmod... OK
+Procurando o comando clear... OK
+Procurando o comando cp...    OK
+Procurando o comando cpp...   OK
+Procurando o comando cut...   OK
+Procurando o comando diff...  OK
+Procurando o comando du...    OK
+Procurando o comando find...  OK
+Procurando o comando grep...  OK
+Procurando o comando lynx...  OK
+Procurando o comando mv...    OK
+Procurando o comando od...    OK
+Procurando o comando play...  OK
+Procurando o comando rm...    OK
+Procurando o comando sed...   OK
+Procurando o comando sleep... OK
+Procurando o comando sort...  OK
+Procurando o comando tr...    OK
+Procurando o comando uniq...  OK
+Verificando a codificação do sistema... UTF-8
+Verificando a codificação das Funções ZZ... UTF-8
+prompt$
+</PRE>
+
+<H2 ID="outro-shell"><a href="#outro-shell">Como usar as Funções ZZ no ksh, csh ou outro shell?</a></H2>
+
+<P>
+Se você usa outro shell, ainda assim pode utilizar as Funções ZZ, desde que o shell Bash também esteja instalado em sua máquina.
+</P>
+
+<H3>tcsh</H3>
+
+<P>
+Use o seguinte comando para instalar as funções em seu <CODE>~/.tcshrc</CODE>:
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> <span class="command-zz"><a href="man.html#zzzz">zzzz</a></span> --tcshrc</span>
+</PRE>
+
+<H3>zsh</H3>
+
+<P>
+Use o seguinte comando para instalar as funções em seu <CODE>~/.zshrc</CODE>:
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> <span class="command-zz"><a href="man.html#zzzz">zzzz</a></span> --zshrc</span>
+</PRE>
+
+<H3>Outros</H3>
+
+<P>
+Crie um alias para as funções, chamado zz:
+</P>
+
+<PRE>
+alias zz="/home/FULANO/bin/funcoeszz"
+</PRE>
+
+	<BLOCKQUOTE>
+	Nota: Use a sintaxe do seu shell. Este exemplo está em Bash.
+	</BLOCKQUOTE>
+<P>
+Feito o alias, agora você pode chamar as funções dessa maneira:
+</P>
+
+<PRE>
+zz cores
+zz calcula 2 + 2
+zz ipinternet
+</PRE>
+
+<P>
+E assim por diante, é só lembrar do espaço após o zz.
+</P>
+
+<H2 ID="comando-faltando"><a href="#comando-faltando">Erro: Comando não encontrado (command not found)</a></H2>
+
+<P>
+As funções utilizam vários comandos do sistema para desempenhar suas tarefas. Eles precisam estar instalados em sua máquina para que as funções funcionem corretamente.
+</P>
+<P>
+Se apareceu uma mensagem na tela dizendo quem um comando não foi encontrado, será preciso instalá-lo.
+</P>
+<P>
+Para saber quais comandos estão faltando em seu sistema, faça:
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> <span class="command-zz"><a href="man.html#zzzz">zzzz</a></span> --teste</span>
+</PRE>
+
+<P>
+<A HREF="#requisitos">Saiba mais...</A>
+</P>
+
+<H2 ID="lynx-post-data"><a href="#lynx-post-data">Erro: lynx: Opção desconhecida -post-data</a></H2>
+
+<P>
+Você possui uma versão antiga do navegador lynx, que ainda não entende a  opção <CODE>-post-data</CODE>, necessária para o funcionamento de algumas funções.
+</P>
+<P>
+Atualize o programa lynx para a versão 2.8.4 ou outra mais recente.
+</P>
+
+<H2 ID="proxy"><a href="#proxy">Minha empresa usa proxy!</a></H2>
+
+<P>
+Caso você utilize proxy para acesso à Internet, o lynx precisa saber disso. Coloque as seguintes linhas no final de seu arquivo <CODE>~/.bashrc</CODE>, indicando o endereço do servidor proxy (pode ser o domínio ou o endereço IP) e a porta:
+</P>
+
+<PRE>
+export http_proxy=http://proxy.dominio.com.br:3128
+export https_proxy=http://proxy.dominio.com.br:3128
+</PRE>
+
+<H2 ID="proxy-senha"><a href="#proxy-senha">Minha empresa usa proxy autenticado com senha!</a></H2>
+
+<P>
+Primeiro, defina o endereço e porta do proxy, como explicado na dica anterior. Então crie um alias em seu <CODE>~/.bashrc</CODE> para que o lynx sempre seja chamado com seu usuário e senha, de maneira transparente:
+</P>
+
+<PRE>
+alias lynx="lynx -pauth=usuario:senha"
+</PRE>
+
+<P>
+Se você usa wget em vez do lynx, a sintaxe é esta:
+</P>
+
+<PRE>
+wget --proxy-user="usuario" --proxy-password="senha"
+</PRE>
+
+<H2 ID="utf-vs-iso"><a href="#utf-vs-iso">Não entendi nada desse negócio de UTF-8 e ISO-8859-1</a></H2>
+
+<P>
+Tudo bem, não é preciso :)
+</P>
+<P>
+Se as letras acentuadas áéíóú aparecem normalmente, você está com a versão certa das Funções ZZ. Mas se os acentos aparecem estranhos, será preciso baixar outra versão.
+</P>
+<P>
+Para tirar a dúvida, execute o comando zzzz --teste e veja os resultados do teste de codificação:
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> <span class="command-zz"><a href="man.html#zzzz">zzzz</a></span> --teste</span>
+...
+Verificando a codificação do sistema... UTF-8
+Verificando a codificação das Funções ZZ... UTF-8
+$
+</PRE>
+
+<P>
+Quando as codificações do sistema e das funções estão iguais, tudo vai funcionar corretamente. Neste exemplo, ambas estavam em UTF-8.
+</P>
+<P>
+Quando há uma incompatibilidade, será mostrada uma mensagem informando se você deve baixar as funções na versão UTF-8 ou ISO-8859-1. Veja um exemplo:
+</P>
+
+<PRE>
+<span class="prompt">$</span><span class="command"> <span class="command-zz"><a href="man.html#zzzz">zzzz</a></span> --teste</span>
+...
+Verificando a codificaÃ§Ã£o do sistema... ISO-8859-1
+Verificando a codificaÃ§Ã£o das FunÃ§Ãµes ZZ... UTF-8
+
+**Atencao**
+Ha uma incompatibilidade de codificacao.
+Baixe as Funcoes ZZ versao ISO-8859-1.
+
+$
+</PRE>
+
+</div></div><!-- #content, #body -->
+<div id="footer"></div>
+<a class="cabecao" href="http://aurelio.net" title="AURELIO.NET — Organizações Verde Inc.™" alt="AURELIO.NET — Organizações Verde Inc.™"><img src="http://aurelio.net/include/10anos/aureliolga.jpg"></a>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-280222-4";
+urchinTracker();
+</script>
+
+</DIV>
+
+<!-- html code generated by txt2tags 2.6.1087 (http://txt2tags.org) -->
+<!-- cmdline: txt2tags faq.t2t -->
+</BODY></HTML>

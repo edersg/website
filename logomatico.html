@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<LINK REL="icon" TYPE="image/png" HREF="img/favicon.png">
+<TITLE>Logomático - Funções ZZ</TITLE>
+
+<style type="text/css">
+body { text-align:center; margin:auto;}
+#canvas { margin:50px auto; position: relative; }
+
+#canvas, #cores, #vazado { width:256px; height:256px; }
+#cores { float:left; }
+#chave-esq { float:left; }
+#chave-dir { float:right; }
+#chave-esq,
+#chave-dir {
+	width:80px;
+	height:250px;
+}
+#zz {
+	position:absolute;
+	top:55px;
+	left:55px;
+	width:140px;
+	height:140px;
+}
+#vazado {
+	position:absolute;
+	top:0;
+	left:0;
+	background:url(img/logo/zzlogo-vazado-preto.png);
+}
+table { border-spacing:0; border-collapse:collapse; margin:auto; }
+td    { width:32px; height:32px; border:1px solid black; }
+td a  { display:block; text-decoration:none; }
+
+.white  { background-color: white  ; }
+.black  { background-color: black  ; }
+.yellow { background-color: yellow ; }
+.red    { background-color: red    ; }
+.green  { background-color: lime   ; }
+.orange { background-color: #FF8000; }
+.blue   { background-color: #0080FF; }
+.pink   { background-color: #FF0080; }
+.rose   { background-color: #CC66FF; }
+.gray   { background-color: #666666; }
+.silver { background-color: #E6E6E6; }
+
+#footer { clear: both; margin: 4em; }
+</style>
+
+<script type="text/javascript">
+	function clique(el) {
+		cor = el.parentNode.className;
+		destino = el.parentNode.parentNode.id.replace('cor-', '');
+		document.getElementById(destino).className = cor;
+	}
+	function fundo(n) {
+		el = document.getElementById("vazado");
+		cor = (n == 0) ? "preto" : "branco";
+		el.style.backgroundImage = "url(img/logo/zzlogo-vazado-" + cor + ".png)";
+	}
+</script>
+
+
+</HEAD>
+<BODY>
+<H1>Crie seu próprio logotipo das Funções ZZ!</H1>
+
+<div id="canvas">
+	<div id="cores">
+		<div id="chave-esq" class="white"></div>
+		<div id="chave-dir" class="white"></div>
+		<div id="zz" class="white"></div>
+	</div>
+	<div id="vazado"></div>
+</div>
+
+<table id="tabelinha">
+<tr id="cor-chave-esq">
+	<th>{</th>
+	<td class="yellow"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="orange"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="red"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="pink"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="rose"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="blue"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="green"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="white"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="silver"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="gray"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="black"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+</tr>
+<tr id="cor-zz">
+	<th>ZZ</th>
+	<td class="yellow"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="orange"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="red"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="pink"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="rose"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="blue"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="green"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="white"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="silver"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="gray"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="black"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+</tr>
+<tr id="cor-chave-dir">
+	<th>}</th>
+	<td class="yellow"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="orange"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="red"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="pink"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="rose"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="blue"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="green"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="white"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="silver"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="gray"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+	<td class="black"><a href="#" onClick="clique(this)">&nbsp;</a></td>
+</tr>
+<tr>
+	<th>fundo</th>
+	<td class="white"><a href="javascript:fundo(1)">&nbsp;</a></td>
+	<td class="black"><a href="javascript:fundo(0)">&nbsp;</a></td>
+	<td colspan="9" style="border-style: none;"></td>
+</tr>
+</table>
+
+<div id="footer">
+	<p>Quando terminar, faça um PrintScreen para salvar o logo.</p>
+<A HREF="logo.html">« Voltar ao site das Funções ZZ</A>
+</div>
+
+</BODY></HTML>

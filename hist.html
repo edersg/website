@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<meta name="author" content="Aurelio Jargas">
+<META NAME="generator" CONTENT="http://txt2tags.org">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<LINK REL="stylesheet" TYPE="text/css" HREF="http://aurelio.net/include/clean-2012/base.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="http://aurelio.net/include/clean-2012/article.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="_site.css">
+<TITLE>História das Funções ZZ</TITLE>
+<link rel="shortcut icon" href="/img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</HEAD>
+<BODY id="hist">
+
+<DIV ID="header">
+<H1>História das Funções ZZ</H1>
+</DIV>
+
+<DIV ID="main">
+<div class="menu">
+<P>
+<A HREF="/">$HOME</A>
+</P>
+
+<OL>
+<LI>/run
+  <UL>
+  <LI><A HREF="/online/">online</A>
+  <LI><A HREF="download.html">download</A>
+  </UL>
+<LI>/doc
+  <UL>
+  <LI><A HREF="list.html">zz*</A>
+  <LI><A HREF="man.html">man</A>
+  <LI><A HREF="faq.html">FAQ</A>
+  <LI><A HREF="changelog.html">changelog</A>
+  <LI><A HREF="hist.html">13 anos!</A>
+  </UL>
+<LI>/dev
+  <UL>
+  <LI><A HREF="https://github.com/funcoeszz/funcoeszz">GitHub</A>
+  <LI><A HREF="my.html">sua ZZ</A>
+  <LI><A HREF="logo.html">logo</A>
+  <LI><A HREF="donate.html">doações</A>
+  <LI><A HREF="thanks.html">valeu!</A>
+  </UL>
+<LI>/chat
+  <UL>
+  <LI><A HREF="https://github.com/funcoeszz/funcoeszz/issues">bugs</A>
+  <LI><A HREF="https://github.com/funcoeszz/funcoeszz/issues/new">ideias</A>
+  <LI><A HREF="http://br.groups.yahoo.com/group/zztabtab/">fórum</A>
+  <LI><A HREF="http://twitter.com/oreio">@oreio</A>
+  </UL>
+</OL>
+
+</div><div id="content">
+<img src="img/aurelio-64.png" style="padding:0 10px 5px 0; float:left;" alt="">
+	<BLOCKQUOTE>
+	Oi, eu sou o <A HREF="http://aurelio.net">Aurelio</A> e criei as Funções ZZ em 22 de fevereiro de 2000. Parece que foi ontem, mas já passou tanto tempo, mais de uma década… Quer ouvir a história toda? Então senta aí que eu vou te contar.
+	</BLOCKQUOTE>
+<P>
+Bem, eu trabalhava com Linux na Conectiva, e na época fazíamos vários pequenos <A HREF="http://aurelio.net/shell/">shell scripts</A> para automatizar tarefas repetitivas. Em geral eram scripts simples, de poucas linhas: <A HREF="http://aurelio.net/doc/rdl/areas-compartilhadas.html">consultar a lista de ramais</A>, obter informações de <A HREF="http://en.wikipedia.org/wiki/RPM_Package_Manager">pacotes RPM</A>, coisas assim.
+</P>
+<P>
+Estes scripts eram compartilhados entre os funcionários, na rede interna da empresa. Apesar de úteis, utilizar estes scripts era algo um pouco complicado para os funcionários iniciantes em shell, pois eram vários arquivos diferentes, tinha que copiar para alguma pasta do <CODE>$PATH</CODE>, tornar executável (<CODE>chmod</CODE>), lembrar do nome na hora de executar…
+</P>
+
+<H2 ID="conceito"><a href="#conceito">O conceito</a></H2>
+
+<P>
+Meu objetivo era facilitar o uso de meus scripts, para que mesmo leigos em shell pudessem operá-los. Desta necessidade nasceu o conceito das Funções ZZ:
+</P>
+
+<UL>
+<LI>Em vez de vários arquivos picados, juntei tudo em um único arquivo. Transformei cada script em uma função, fazendo uma biblioteca.
+<P></P>
+<LI>Sendo um único arquivo, ficava mais fácil compartilhar.
+<P></P>
+<LI>Sendo uma biblioteca de funções, não precisava ser executável, nem estar no PATH. O arquivo podia ser copiado para qualquer pasta e não tinha mais a complicação do <CODE>chmod</CODE>.
+<P></P>
+<LI>Para resolver o problema de lembrar o nome do comando (no caso, função), aproveitei-me do <A HREF="http://en.wikipedia.org/wiki/Command-line_completion">Tab-completion</A>. Escolhi um prefixo comum e inédito para todas as funções (zz), assim o usuário pode digitar zz, apertar a tecla Tab duas vezes e pronto, aparecerão os nomes na tela, basta escolher.
+</UL>
+
+<P>
+A primeira versão contava com cerca de 10 funções, algumas de uso interno como a <I>zzramal</I> e <I>zzrpmdisco</I>, e outras já mais genéricas, como a <I>zzdolar</I> e a <I>zzbabelfish</I>, que consultavam a internet.
+</P>
+
+<H2 ID="lancamento"><a href="#lancamento">2000 — O lançamento público</a></H2>
+
+<P>
+Os funcionários da empresa gostaram, e nos meses seguintes foram sugerindo melhorias e funções novas.
+Após sete meses de evolução neste período encubatório, a biblioteca cresceu para 22 funções e decidi fazer o <A HREF="http://br.groups.yahoo.com/group/shell-script/message/430">primeiro anúncio público do projeto</A>, em 15/09/2000.
+</P>
+	<BLOCKQUOTE>
+	Curiosidade: Veja como era <A HREF="download/funcoeszz-0.0915.sh">o código das Funções ZZ em 15/09/2000</A>, esta é a versão mais antiga que tenho guardada.
+	</BLOCKQUOTE>
+<P>
+Se me lembro bem, no início o projeto não teve grande repercussão. Os usuários foram aparecendo aos poucos. De vez em quando aparecia um comentário de alguém que tinha achado um problema ou tinha uma ideia de função nova.
+</P>
+<P>
+Eu continuei tocando o projeto, que já era ferramenta de trabalho na Conectiva. Segui adicionando mais funções, as mais interessantes sem dúvida eram as que consultavam a internet:
+</P>
+
+<UL>
+<LI><I>zzcep</I> para consultar o CEP direto do site dos Correios
+<LI><I>zzdetran</I> para consultar os dados do veículo do Detran-PR
+<LI><I>zzirpf</I> para consultar sobre a restituição do Imposto de Renda
+</UL>
+
+<H2 ID="conectiva-linux"><a href="#conectiva-linux">2001 — Funções ZZ no Conectiva Linux</a></H2>
+
+<P>
+Quando o projeto completou um ano e meio de existência (Out/2001), possuía cerca de 30 funções e conseguiu sua primeira grande conquista: foi incluído no Conectiva Linux. Os usuários da maior distro nacional de Linux agora podiam instalar o pacote <I>funcoeszz</I>.
+</P>
+<P>
+<IMG ALIGN="middle" SRC="img/cl8-caixa.jpg" BORDER="0" ALT="">
+</P>
+	<BLOCKQUOTE>
+	Para mim foi muito emocionante, meu software ser usado no produto da empresa em que eu trabalhava.
+	</BLOCKQUOTE>
+<P>
+Com esta exposição massiva, a base de usuários cresceu bastante. Fiquei mais motivado para seguir adiante, e o projeto ganhou em qualidade: são mais pessoas usando, testando e avisando de problemas. Principalmente nas funções que consultam a internet, elas param de funcionar sempre que o site consultado muda seu leiaute.
+</P>
+<P>
+Para ajudar os usuários novatos, criei uma página para as Funções ZZ dentro de meu site, apresentando o projeto e dando instruções. E assim nasceu, tímido, o website das funções.
+</P>
+
+<H2 ID="thobias"><a href="#thobias">2002-2006 — Thobias</a></H2>
+
+<P>
+ <IMG ALIGN="right" SRC="img/thobias.jpg" BORDER="0" ALT="">
+</P>
+<P>
+Quando o projeto completou dois anos  (Fev/2002), recebi o primeiro email do <A HREF="http://thobias.org">Thobias Salazar Trevisan</A>, um usuário que sugeriu uma função nova (<I>zzsigla</I>), e já mandou o código pronto dela. Isso era coisa rara!
+</P>
+<P>
+Este foi o primeiro de muitos emails. O Thobias estava sempre antenado, participando do projeto: me avisava de bugs que encontrava, sugeria funções novas e contribuia com código.
+</P>
+<P>
+Em um ano de contribuição voluntária ao projeto, ele já havia criado outras funções: <I>zzrpmfind</I>, <I>zzpronuncia</I>, <I>zzhowto</I>, <I>zzsenha</I>, <I>zzlinuxnews</I>, <I>zzletrademusica</I>. Como reconhecimento por seu trabalho e dedicação, e para oficializar o que já vinha ocorrendo na prática, em 06/05/2003 tornei o Thobias <B>coautor das Funções ZZ</B>.
+</P>
+	<BLOCKQUOTE>
+	Leia também: <A HREF="http://www.thobias.org/scr/">Eu seu site</A>, o Thobias contou seu lado desta história.
+	</BLOCKQUOTE>
+	<BLOCKQUOTE>
+	Curiosidade: Nesta data, o projeto contava com <A HREF="download/funcoeszz-3.0507.sh">52 funções</A>.
+	</BLOCKQUOTE>
+<P>
+Juntos levamos o projeto adiante, continuando o trabalho infinito de arrumar as funções que quebravam e adicionar novas. A parceria deu certo, e além de diversas versões novas lançadas nos meses e anos seguintes, o mais importante é que nos tornamos bons amigos.
+</P>
+<P>
+Programávamos juntos, porém à distância: eu no Paraná e ele no Rio Grande do Sul. Via chat do Skype discutíamos os problemas técnicos e ali mesmo colávamos os códigos e íamos melhorando até ficar pronto para entrar nas ZZ. Quer ver como era? Olha <A HREF="aovivo.html">esse histórico de 8h de trabalho direto</A>, insano!
+</P>
+<P>
+A última versão que o Thobias participou ativamente foi a 6.11, de Nov/2006. Depois ele se dedicou mais à família e ao mundo offline, e passou a contribuir esporadicamente com as funções. O <A HREF="http://aurelio.net/blog/2005/11/30/processo-de-desnerdizacao/">processo de desnerdização</A> dele deu certo. Parabéns amigo!
+</P>
+	<BLOCKQUOTE>
+	Curiosidade: Eu e o Thobias criamos outro projeto em conjunto, chamado <A HREF="http://aurelio.net/rac/">RAC</A>. Trabalhamos nele de 2003 a 2005, mas infelizmente não foi pra frente :(
+	</BLOCKQUOTE>
+
+<H2 ID="camiseta"><a href="#camiseta">2003-2008 — Site, logo e camiseta</a></H2>
+
+<P>
+Um projeto de software envolve mais do que somente o código, então inventamos outras best^W, digo, outros meios de divulgá-lo.
+</P>
+<P>
+O primeiro logo das Funções ZZ eu fiz em casa, no Paintbrush do Windows, no ano de 2003. Não é um primor de beleza, mas leve em conta que sou programador e não designer. Podemos considerá-lo "simpático" pelo menos? :)
+</P>
+
+<TABLE ALIGN="center" BORDER="1">
+<TR>
+<TD ALIGN="center"><IMG ALIGN="middle" SRC="img/logo/zzlogo-old.png" BORDER="0" ALT=""></TD>
+<TD ALIGN="center"><IMG ALIGN="middle" SRC="img/icon/128.png" BORDER="0" ALT=""></TD>
+</TR>
+<TR>
+<TD ALIGN="center"><I>2003</I></TD>
+<TD ALIGN="center"><I>2008</I></TD>
+</TR>
+</TABLE>
+
+<P>
+Já a versão de 2008 eu acho linda, perfeita, com as chaves representando o conceito de funções no Bash. Foi criada pelo Leonardo Boiko, que ganhou <A HREF="http://aurelio.net/blog/2008/08/13/novo-icone-logotipo-das-funcoes-zz/">o concurso promovido em meu blog</A>.
+</P>
+<P>
+No início, o site das funções era abrigado dentro de meu site pessoal, no endereço <I>aurelio.net/zz</I>. Em 2005 comprei o domínio <B>funcoeszz.net</B>, que virou o endereço oficial das funções desde então.
+</P>
+<P>
+Também em 2005 fizemos uma edição limitada de 50 camisetas das Funções ZZ para comemorar os 5 anos do projeto. Na frente, o ZZ é composto pelos nomes de todas as funções. Nas costas é um screenshot com as funções preferidas dos usuários, votadas em uma enquete na Internet. Felizmente conseguimos vender todas :)
+</P>
+
+<TABLE ALIGN="center">
+<TR>
+<TD><A HREF="img/camiseta-zz-arte-frente.png"><IMG ALIGN="middle" SRC="img/camiseta-zz-frente.png" BORDER="0" ALT=""></A></TD>
+<TD><A HREF="img/camiseta-zz-arte-costas.png"><IMG ALIGN="middle" SRC="img/camiseta-zz-costas.png" BORDER="0" ALT=""></A></TD>
+</TR>
+<TR>
+<TD ALIGN="center" COLSPAN="2"><I>Clique na camiseta para ampliar</I></TD>
+</TR>
+</TABLE>
+
+<H2 ID="ng"><a href="#ng">2008 — A nova geração das ZZ</a></H2>
+
+	<BLOCKQUOTE>
+	De repente, caiu a ficha. Lembrei das ZZ e comecei a sentir vergonha. Que moral eu tenho para falar em código bonito se meu programa mais conhecido pelos shelleiros tem um código sopa-de-letrinhas? Casa de ferreiro…
+	</BLOCKQUOTE>
+	<BLOCKQUOTE>
+	Fui obrigado a resolver de vez o problema. Parei a escrita do livro e fiquei vários dias trabalhando no código das funções, reformatando, alinhando, colocando comentários, melhorando os nomes de variáveis, trocando algoritmos enigmáticos por versões simplificadas. Enfim, aquela reforma geral bonita de ver, de desmontar o jipe até os chassis, não sobrando nenhum parafuso no lugar.
+	</BLOCKQUOTE>
+	<BLOCKQUOTE>
+	<A HREF="http://aurelio.net/blog/2008/03/05/a-nova-geracao-das-funcoes-zz/">http://aurelio.net/blog/2008/03/05/a-nova-geracao-das-funcoes-zz/</A>
+	</BLOCKQUOTE>
+<P>
+Precisei parar de contar a história pra fazer o lançamento da versão nova 13.2. Depois eu continuo, ok?
+</P>
+	<BLOCKQUOTE>
+	<B>Atualização:</B> Fiz um texto no blog, ponderando estes 13 anos de ZZ: <A HREF="http://aurelio.net/blog/2013/02/28/13-anos-de-funcoes-zz/">http://aurelio.net/blog/2013/02/28/13-anos-de-funcoes-zz/</A>
+	</BLOCKQUOTE>
+</div></div><!-- #content, #body -->
+<div id="footer"></div>
+<a class="cabecao" href="http://aurelio.net" title="AURELIO.NET — Organizações Verde Inc.™" alt="AURELIO.NET — Organizações Verde Inc.™"><img src="http://aurelio.net/include/10anos/aureliolga.jpg"></a>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-280222-4";
+urchinTracker();
+</script>
+
+</DIV>
+
+<!-- html code generated by txt2tags 2.6.1087 (http://txt2tags.org) -->
+<!-- cmdline: txt2tags hist.t2t -->
+</BODY></HTML>

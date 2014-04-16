@@ -1,0 +1,82 @@
+Download e instalação das Funções ZZ
+
+
+%!includeconf: _config.t2t
+
+%!include: _menu.t2t
+
+
+% 	Dica: Sabia que você também também pode usar as _ZZ [direto no navegador _ONLINE_URL], ou [em seu iPhone _ITUNES_URL]?
+
+% 	Dica: Manja de git? Então [baixe o repositório completo _GITHUB_URL] e seja feliz!
+
+% + Vá no [_ZZ à la carte ""a-la-carte/?zz=*""], escolha as funções desejadas e aperte o botão //Baixar arquivo//. Um arquivo chamado ``funcoeszz.sh`` será baixado para o seu computador.
+
+
++ Baixe o arquivão com todas as Funções ZZ: [funcoeszz-13.2.sh download/funcoeszz-13.2.sh]
+
++ Vá na pasta onde o arquivo foi baixado e teste seu funcionamento:
+
+```
+prompt$ cd ~/Downloads
+prompt$ bash funcoeszz-13.2.sh zzcalcula 10+5
+15
+prompt$ 
+```
+
++ Para facilitar o uso, renomeie o arquivo para somente ``funcoeszz`` e torne-o executável:
+
+```
+prompt$ mv funcoeszz-13.2.sh funcoeszz
+prompt$ chmod +x funcoeszz
+```
+
++ Agora você pode chamar o arquivo diretamente:
+
+```
+prompt$ ./funcoeszz zzcalcula 10+5
+15
+prompt$ 
+```
+
++ Mas bom mesmo é poder chamar cada função individualmente, sem burocracia. Basta rodar o seguinte comando para algumas linhas mágicas serem adicionadas no final de seu arquivo ``~/.bashrc``
+
+```
+prompt$ ./funcoeszz zzzz --bashrc
+Feito!
+As Funções ZZ foram instaladas no /Users/aurelio/.bashrc
+prompt$ 
+```
+
++ Agora sim, você pode usar as _ZZ em toda a sua glória. Abra um novo terminal e divirta-se!
+
+```
+prompt$ zzcalcula 10+5
+15
+prompt$ zzbissexto
+2012 é bissexto
+prompt$ zzmaiusculas tá funcionando
+TÁ FUNCIONANDO
+prompt$ 
+```
+
+
+== _ZZ no Windows ==[windows]
+
+Se você usa Windows, baixe e instale o [Cygwin http://aurelio.net/cygwin/] para poder usar as _ZZ.
+
+
+== Acentuação ==[acentuacao]
+
+Se der problema com a acentuação, baixe a [versão alternativa (iso) download/funcoeszz-13.2-iso.sh] das funções, especial para terminais que ainda não migraram para a codificação UTF-8.
+
+
+== -bash: zzcalcula: command not found ==[not-found]
+
+Se este erro aparecer, certifique-se que há uma chamada para o ``.bashrc`` dentro de seu ``~/.bash_profile``. Se não houver, simplesmente adicione esta linha no final do ``~/.bash_profile``:
+
+``` source ~/.bashrc
+
+
+%!include: _footer.t2t
+%!include: ''_comments.html''

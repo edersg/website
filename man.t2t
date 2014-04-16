@@ -1,0 +1,26 @@
+Manual das Funções ZZ
+
+
+%!includeconf: _config.t2t
+%!options: --toc
+
+% Set page ID
+%!postproc: <BODY <BODY id="man"
+
+%%% Insert GitHub link in every title
+% From: <H1 ID="zzajuda">zzajuda</H1>
+% To:   <h2 ID="zzajuda">zzajuda <span><a>código no GitHub</a> →</span></h2>
+%!postproc: '^<H1 ID=".*?">(.*?)</H1>'	'<h2 id="\1">\1 <span><a href="https://github.com/funcoeszz/funcoeszz/blob/master/zz/\1.sh">código no GitHub</a> →</span></h2>'
+
+% Force a blank line before Uso:
+%!postvoodoo: '([^\n])\nUso:'  '\1\n\nUso:
+
+%!include: _menu.t2t
+
+
+%%TOC
+
+%!include: ../funcoeszz/manpage/manpage.t2t
+
+
+%!include: _footer.t2t

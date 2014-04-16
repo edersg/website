@@ -1,0 +1,452 @@
+ZZ Ao Vivo — Os bastidores do desenvolvimento das Funções ZZ
+
+
+%!includeconf: _config.t2t
+
+% Set page ID
+%!postproc: <BODY <BODY id="aovivo"
+
+% Mark names for CSS formatting
+%!postproc: '^(<LI>)(\d\d:\d\d Aurelio:)'	'\1<span class="a">\2</span>'
+%!postproc: '^(<LI>)(\d\d:\d\d Thobias:)'	'\1<span class="t">\2</span>'
+
+% Multiline dialogs start with 4 spaces
+%!preproc: '^(    )'	"\1''<br>''"
+
+% Huge page, we need TOC
+%!options: --toc
+
+%!include: _menu.t2t
+
+
+Aqui estão os trechos da conversa que os desenvolvedores das Funções ZZ tiveram **enquanto** programavam a versão nova, numa solitária noite de 2006.
+
+Distantes centenas de quilômetros e comunicando-se pela Internet, dois desenvolvedores trabalharam no mesmo código ao mesmo tempo, durante horas. Os segredos dos bastidores do desenvolvimento de um software livre feito a quatro mãos, pela primeira vez desvendados :)
+
+- 13 de Novembro de 2006, segunda-feira.
+- [Aurelio http://aurelio.net] em Matinhos (PR),
+  [Thobias http://thobias.org] em Porto Alegre (RS).
+- Das 18h30 às 02h10, quase oito horas de programação intensa.
+- Console aberto em terminais de fundo preto, janela do Skype ao lado.
+- Codifica no Vim, testa na linha de comando, escreve no Skype.
+- Sintonia e sincronia.
+-
+As funções já estavam há mais de um ano sem atualizações, então havia
+muito a arrumar. Sites que mudaram de endereço, páginas que mudaram de
+formato e problemas encontrados pelos usuários. Mais de 20 funções
+quebradas.
+
+Além do tempo a ser investido, é preciso estar inspirado para
+encarar uma faxina dessa magnitude. A segunda-feira dia 13 tinha algo
+de especial, deu certo de estarmos com tempo e vontade.
+
+	Em meu blog publiquei a
+	"[versão poética http://blog.aurelio.net/2006/11/14/zz-ao-vivo-um-concerto-de-1010-dedos/]"
+	desta história.
+
+% ------------------------------------------------------------------------
+%%TOC
+% ------------------------------------------------------------------------
+
+=== O início ===
+- 18:28 Aurelio: zz?
+- 18:28 Thobias: vamos? por mim ok. vou ficar por casa hoje mesmo...
+-
+=== A situação atual ===
+- 18:41 Aurelio: então vamo, tou rodando o testador
+- 18:42 Thobias: blz, vou começar a testar algumas. vamos fazer uma lista do que está quebrado...
+- 18:42 Aurelio: tem algumas que o pessoal já arrumou, lá na lista
+- 18:45 Aurelio: caralho, quebradeira total
+- 18:45 Thobias: aham
+- 18:47 Aurelio: 11 e a contagem continua...
+- 18:47 Aurelio: vamos fazer um troço light, não precisa arrumar tudo :)
+- 18:48 Thobias: é, vai dar muito trabalho arrumar tudo hehe
+- 18:51 Aurelio: 19 zzs quebradas tá bom pra você? :)
+- 18:52 Thobias: peguei mais algumas quebradas aqui
+- 18:52 Aurelio: ultima versão de set-2005. até que não quebrou taaaaanto assim pra mais de um ano
+-
+=== A longa lista de problemas a arrumar ===
+- 19:00 Aurelio: listagem atualizada:
+    dicabl (404)
+    dicportugues (null)
+    sigla (filtro)
+    dolar (filtro)
+    dicasl (URL)
+    dominiopais (tirar //I)
+    detranpr (null)
+    chavepgp (URL)
+    zzcep (null)
+    noticiaslinux (viva o linux(null), info exame(null), underlinux(null), noticias linux(BSD?))
+    noticiassec (linux security)
+    linuxnews (slashdot(filtro), os news(null))
+    pronuncia (ver alternativa ao comando play no mac)
+    google (filtro)
+    howto (null)
+    zztv (null)
+    letrasdemusica (null)
+    whoisbr (Alert!: This client does not contain support for HTTPS URLs.)
+    locale (null - BSD?)
+    security (cl9(filtro), cl10(filtro), mandriva(null), gentoo(filtro)
+    ipinternet (null)
+    loteria (filtro)
+-
+=== Os trabalhos começam ===
+- 19:00 Aurelio: ah, deixa ver a portugues aqui
+- 19:01 Aurelio: aqui nao funciona mesmo, deve ser BSDzisse
+- 19:01 Aurelio: ah, achei, o sed tem OU \|
+-
+=== Definindo prioridades ===
+- 19:08 Aurelio: vi o mail da nomefoto
+- 19:09 Aurelio: tem que investigar e corrigir. deixar pra mais tarde essa :)
+- 19:10 Thobias: blz
+- 19:11 Aurelio: ou se quiser pegar essa agora, eu vejo as da lista
+- 19:14 Thobias: tem muita coisa quebrada... vamos focar nas simpes primeiro... diminuir esse número...
+-
+=== Primeiro aplicamos as correções mandadas pelos usuários ===
+- 19:14 Aurelio: tou na abl
+- 19:15 Thobias: ok, dessas quais tem patch na lista?
+- 19:15 Aurelio: tem que ver, a 1a que vi foi a abl e fui pra ela
+- 19:16 Aurelio: voce nao tem as msgs da lista ai?
+- 19:16 Thobias: blz, vou começar de baixo
+- 19:16 Thobias: tenho
+- 19:16 Aurelio: ok, avisa qual voce pegar
+- 19:17 Aurelio: ah, lembra de anotar o nome completo do cara pra por nos agradecimentos
+-
+=== Pings e ACKs para evitar trabalho duplicado ===
+- 19:26 Aurelio: dicabl OK, vou pra loteria
+- 19:32 Thobias: blz, peguei a ipinternet
+- 19:34 Thobias: ipinternet OK. vou para security
+- 19:39 Aurelio: massa
+- 19:53 Thobias: security ok. vou para locale
+- 19:53 Aurelio: loteria dando um baile
+-
+=== Páginas somem, infelizmente ===
+- 20:00 Thobias: a locale não existe mais aquela página..
+- 20:00 Aurelio: putz, deu trabalho pra achar
+- 20:01 Thobias: pois é. tinhamos que ter pegado o html e colocado no site das zz consultado de la...
+- 20:01 Aurelio: cache do google?
+-
+=== A decisão de fazer uma cópia dos dados para não perder novamente ===
+- 20:44 Thobias: to procurando um site com locales. achei esse aqui http://docs.hp.com/en/5990-8560/apa.html
+- 20:45 Aurelio: opa, hp.com é quente
+- 20:46 Thobias: mas o html é muito xunxo e o dump nao fica direito. fazer o filtro direto vai ser bem chato
+- 20:46 Thobias: tava pensando em pegar isso e criar um arquivo para zz e colocar no site
+- 20:46 Thobias: ?!
+- 20:47 Aurelio: por mim beleza
+- 20:47 Thobias: ok
+- 20:47 Aurelio: isso não sofre atualizações, né?
+- 20:48 Thobias: nao sei. mas deve sofrer poucas eu acho
+- 20:48 Thobias: e aquela nossa outra fonte era um site pessoal de um cara, enfim....
+- 20:48 Aurelio: fazemos o nosso e foda-se
+- 20:48 Thobias: ok
+- 20:50 Thobias: tu te lembra como era a saida do zzlocale antes?
+- 20:51 Aurelio: não tenho :/
+- 20:51 Aurelio: pior que pode ter gente que confia nos formatos antigos
+- 20:51 Aurelio: bem, mas já taav quebrado mesmo...
+-
+=== A luta com a zzloteria começou às 19h30 ===
+- 21:05 Aurelio: eu tou roubando na loteria ;)
+- 21:06 Thobias: hahaha
+- 21:06 Aurelio: entrego os pontos. não vai rolar o sedão mágico
+- 21:12 Aurelio: tive que guardar o dump e pescar cada dado de uma vez, pois cada tipo de loteira o HTML é diferente
+- 21:12 Aurelio: pelo menos é mais fail-proof
+- 21:13 Thobias: bah, que bosta essa loteria hehe
+- 21:13 Thobias: os caras da caixa querem complicar hehe
+- 21:14 Aurelio: nem tanto, os dados tão tudo separadinho por | num tripona, mas cada loteria traz eles numa ordem diferente: http://www1.caixa.gov.br/loterias/loterias/quina/quina_pesquisa.asp  (veja o source, facinho)
+- 21:16 Thobias: saquei. foda é ter um filtro para cada tipo de loteria
+-
+=== A decisão de aposentar uma função ===
+- 21:41 Thobias: tem um rolo na whoisbr
+- 21:41 Thobias: nao sei como vai funcionar ai
+- 21:41 Aurelio: manda que eu testo
+- 21:42 Thobias: na verdade só mudou o método. de GET para post e o negocio agora é https. ai ta dando esse rolo no lynx
+- 21:43 Thobias: para resolver tive que adicionar a seguinte linha no /etc/lynx.cfg 
+- 21:43 Thobias: FORCE_SSL_PROMPT:yes
+- 21:43 Thobias: ei funciona
+- 21:43 Thobias: s/ei/ai/
+- 21:43 Aurelio: ssl sux, nao é em todo lugar que funciona
+- 21:44 Thobias: bom, se souber de algum site que pega global...
+- 21:45 Aurelio: eu lembro de ter lido uma noticia que os dados do .br foram replicados pros whois normais
+- 21:48 Thobias: é verdade. ta funcionando em whois normais o br
+- 21:49 Thobias: blz, vou alterar a função então... zzwhois
+- 22:02 Aurelio: aqui tem o comando whois, no linux tb tem?
+- 22:04 Thobias: tem, mas acho que é um pacote separado... 
+- 22:05 Aurelio: que eu nunca tinha feito zzwhois pq já tinha o comando, e fiz a whoisbr pq não tinha br no comando. agora tem...
+- 22:06 Aurelio: de repente era mais jogo aposentá-la (caso você ainda não tenha feito, é claro) :)
+- 22:16 Thobias: não fiz a funcao, tava procurando um site ainda. achei esse aqui, parece que eh legal http://www.domaintools.com
+- 22:17 Aurelio: se não fez vamos aposentar então, ou deixar no fim da fila
+- 22:20 Thobias: ok
+-
+=== Agora é a vez da luta com a zzletrademusica ===
+- 22:23 Thobias: a letrademusica tem um patch na lista
+- 22:23 Aurelio: opa
+- 22:23 Thobias: do elias junior
+- 22:24 Thobias: vou testar, o patch é de fevereiro hehe
+- 22:24 Aurelio: vix hehe
+- 22:56 Aurelio: caralho, finalmente terminei essa zzloteria mala
+- 23:24 Thobias: pow, to tomando um pau para a letrademusica
+- 23:25 Aurelio: hehe, a gente tá ficando enferrujado :)
+- 23:25 Thobias: pois é. não consigo fazer a pesquisa via lynx no site hehe
+- 23:26 Aurelio: nem via post? deve ter trava ou ser js
+- 23:26 Thobias: sei lá. é um formulário bem simples (eu acho jehe)
+- 23:26 Aurelio: passa o link
+- 23:27 Thobias: echo "?a=search_quick&l=song&s=kkk+took" | $ZZWWWDUMP 'http://search.letssingit.com/cgi-exe/am.cgi#p'
+- 23:27 Thobias: o endereco da página é http://search.letssingit.com/quick_form
+-
+=== As mudanças são passadas ao vivo e já aplicadas nos fontes ===
+- 23:30 Thobias: ipinternet mudar o filtro para sed -n 's/^ *\([0-9]\{1,3\}\.[^ ]*\) */IP: \1/p'
+- 23:31 Thobias: security mandriva muda a url para http://www.mandriva.com/en/rss/feed/security
+- 23:32 Thobias: security conectiva nos sed do cl9 e cl10 adicionar esse comando ;s/   */ - /'
+- 23:32 Thobias: fica assim: $ZZWWWDUMP "$URL$CNC9" | sed '/^ *200[0-9]-[0-1][0-9]-[0-3][0-9]/!d;s/^ *//;s/   */ - /' | $limite 
+-
+=== A decisão de deixar como está: quebrada ===
+- 23:33 Aurelio: esse site das letras deve tar checando o referrer pra evitar robôs tipo a zz de usar
+- 23:34 Thobias: bom. vamos deixar quebrada por enquanto...
+- 23:34 Aurelio: sábia decisão :)
+- 23:34 Thobias: hehehe
+-
+=== Além dos problemas normais, o Skype também nos deu trabalho ===
+- 23:39 Aurelio: o skype cortou, mas tem varios espaços depois do nome do pacote
+- 23:40 Thobias: entre o nome do pacote e a descrição?
+- 23:40 Aurelio: isso
+- 23:40 Thobias: ue, aquele sed que eu falei era para justamete casar ali e trocar por um  -
+- 23:41 Thobias: ;s/   */ - /'
+- 23:41 Aurelio: o skype cortou o espaço extra da ER
+- 23:41 Thobias: no final do filtro
+- 23:41 Aurelio: aqui apareceu somente   s/<espaco><asterisco>/ - /
+- 23:42 Aurelio: agora botei 3 espaços e foi
+- 23:42 Thobias: ah. ok s/<espaco><espaco><espaco>*/ - /
+-
+=== Uma parcial do que foi feito até agora em cinco horas de trabalho ===
+- 23:45 Aurelio: so far, so good
+- 23:45 Aurelio:
+    # 20061113 <> dicabl: URL e filtro atualizados (valeu sartini)
+    #          <> loteria: URL e filtro atualizados (valeu casali)
+    #          <> ipinternet: filtro atualizado
+    #          <> locale: URL e filtros atualizados
+    #          <> security: URL e filtro atualizados para conectiva e mandriva
+- 23:48 Thobias: cool
+-
+=== Páginas mudam, padrões mudam, as ZZ mudam ===
+- 23:48 Thobias: zzhowto
+- 23:49 Thobias: no filtro
+- 23:49 Thobias: $ZZWWWHTML "$URL" | sed -n '/alt="\[TXT\]"/{ s/^.*href="\([^"]*\).*/\1/;p;}' > $arq ; echo ' feito!' ; }
+- 23:49 Thobias: o original tá pegando ALT e HREF, os caras trocaram para minusculas...
+- 23:50 Thobias: dá para deixar um [aA][lL][tT] e [hH][rR][eE][fF] ...
+- 23:51 Aurelio: okie
+- 23:53 Aurelio: deixei minusculas mesmo, que é o padrao do xhtml. tags em maiusculas é passado
+- 23:53 Thobias: blz, nao sabia
+-
+=== Mas padrões novos também podem facilitar nossa vida ===
+- 23:54 Aurelio: zznoticiaslinux i    arrumado
+- 23:54 Thobias: vou pegar a linuxnews
+- 23:55 Thobias: nessas agora de noticas vamos tentar trocar aqueles filtros loucos para RSS da vida
+- 23:55 Thobias: ai no maximo precisaremos no futuro trocar a url
+- 23:55 Thobias: como o caso do mandriva hoje
+- 23:56 Aurelio: pode crer
+-
+
+=== E virou a meia-noite... ===
+
+=== RSS zipado? Putz, mais um problema para a coleção... ===
+- 00:08 Aurelio: noticiaslinux u OK
+- 00:09 Thobias: foda que os caras estao publicando o arquivo rss zipado :(
+- 00:09 Aurelio: aqui o lynx se garantiu
+- 00:09 Thobias: tenta um $ZZWWWHTML
+- 00:09 Thobias: $ZZWWWHTML http://osnews.com/files/recent.xml
+- 00:10 Aurelio: aqui rolou
+- 00:11 Thobias:
+    $ $ZZWWWDUMP http://osnews.com/files/recent.xml > /tmp/X
+    $ file /tmp/X
+    /tmp/X: gzip compressed data, from Unix
+- 00:11 Aurelio: linux sux :P
+- 00:12 Thobias: hehe
+- 00:12 Thobias: pode ser a versao do lynx de repente
+- 00:12 Thobias:
+    lynx --version
+    Lynx Version 2.8.5rel.1 (04 Feb 2004)
+    libwww-FM 2.14, SSL-MM 1.4.1, GNUTLS 1.0.16
+    Built on linux-gnu May 13 2006 08:12:44
+- 00:12 Aurelio:
+    $ $ZZWWWDUMP http://osnews.com/files/recent.xml > /tmp/X
+    $ file /tmp/X
+    /tmp/X: XML document text
+    $ lynx --version
+    Lynx Version 2.8.5rel.1 (04 Feb 2004)
+    Built on darwin7.9.0 Sep 29 2005 21:49:53
+- 00:12 Aurelio: nope
+-
+=== Mais um exemplo de patches "ao vivo" ===
+- 00:17 Thobias: zzlinuxnews ok
+- 00:17 Thobias: slashdot filtro:
+- 00:17 Thobias: ""sed -n '/<div class="title">/,/<\/div>/{/slashdot/{ s/<[^>]*>//g;s/^[[:blank:]]*//;p;};}' | $limite;}""
+- 00:18 Thobias: osnews filtro e o tipo de dump: agora é ZZWWWDUMP e o filtro é:
+- 00:18 Thobias: sed -n '/By/{g;s/^ *//;p;};h' | $limite; }
+- 00:19 Thobias: ops. filtro melhor para o osnews
+- 00:19 Thobias: sed -n '/^ *By /{g;s/^ *//;p;};h' | $limite; }
+- 00:21 Thobias: sem agradecimentos tb
+- 00:22 Aurelio: ok. ok.
+-
+=== Acha que o ritmo já está forte? Veja agora então: ===
+- 00:27 Thobias: zzsigla fix filtro tb
+- 00:27 Thobias: ""sed -n 's/^ *//;s/^.*\* *//;s/ *search Amazon.*//p'""
+- 00:28 Aurelio: tou na dominiopais
+- 00:29 Thobias: ok. filtro para zzsigla, tinha um lixo no final das primeiras linhas
+- 00:30 Thobias: ""sed -n 's/^ *//;s/^.*\* *//;s/more info from .*//;s/ *search Amazon.*//p'""
+- 00:30 Thobias: vou para noticiaslinux
+- 00:36 Aurelio: dominiopais e sigla OK
+- 00:37 Aurelio: vou pra dicasl
+- 00:41 Aurelio: dicasl OK
+- 00:41 Thobias: zznoticiaslinux ok
+- 00:42 Thobias: viva o linux mudou o filtro
+- 00:42 Thobias: e o método
+- 00:42 Thobias:
+    echo ; echozz "* Viva o Linux ($URL):"; $ZZWWWHTML $URL/index.rdf |
+    sed -n '1,/<item>/d;s@.*<title>\(.*\)</title>@\1@p' | $limite ; }
+-
+=== Ops, única trombada da noite, mas que acabou bem ===
+- 00:42 Thobias: under Linux, mudou o site e o filtro
+- 00:42 Thobias:
+    [ "$s" != "${s#*u}" ] && { URL='http://under-linux.org/'
+    echo ; echozz "* UnderLinux ($URL):"; $ZZWWWHTML "$URL" |
+    ""sed -n '/class="entry-title/{s/<[^>]*>//g;s/^[[:blank:]]*//;p;}'|$limite;}""
+- 00:42 Thobias: acho que mudou o método também...
+- 00:43 Aurelio: esse eu já tinha feito :)
+- 00:43 Aurelio:
+    [ "$s" != "${s#*u}" ] && { URL='http://under-linux.org/feed/atom/'
+    echo ; echozz "* UnderLinux ($URL):"; $ZZWWWHTML "$URL" |
+    sed -n 's,.*<title .*\[\(.*\)]]></title>.*,\1,p' | $limite; }
+- 00:43 Thobias: achei que tu tinha feito o da info?
+- 00:44 Thobias: ah, o atom vem zipado para mim....
+- 00:44 Thobias: vai dar rolo com alguns usuarios...
+- 00:44 Aurelio: então vou usar o teu
+- 00:44 Aurelio: viu, não foi perdido :)
+- 00:44 Thobias: :)
+-
+=== Compatibilidade é importante (e difícil, e chato, e …) ===
+- 00:47 Aurelio: o noticias linux funciona aí? (aqui nao)
+- 00:47 Thobias: funciona
+- 00:48 Aurelio: sed: 1: "/<[hH]3>/{s/<[^>]*>//g; ...": extra characters at the end of p command
+- 00:48 Aurelio: BSDzisses
+- 00:48 Thobias: da pera pegar daqui entao http://www.noticiaslinux.com.br/rss.php
+- 00:48 Aurelio: nem esquenta, é o sed, vou arrumar
+- 00:49 Aurelio: ah, só faltou o ; antes do }
+- 00:50 Thobias: é mesmo hehe
+- 00:55 Aurelio: noticiaslinux n OK
+- 00:55 Aurelio: no BSD não rola [\t]  tb
+- 00:56 Thobias: tem o [[:blank:]] ?
+- 00:56 Aurelio: tem. bem lembrado
+-
+=== Google é legal, mas o HTML deles… ===
+- 01:12 Aurelio: putz, essa zzgoogle não tou afim de fazer. se você não fizer, lanço o release sem ela mesmo :)
+- 01:12 Thobias: ta quase
+- 01:13 Thobias: bah, que zona aquele html
+- 01:17 Aurelio: total, eu lembro que foi foda fazer a original
+- 01:19 Thobias: acho que deu
+- 01:20 Thobias: não ficou muito bonito, mas....
+- 01:20 Thobias: só mudou o filtro
+    sed '/<p class=g>/!d;s/class=l/&\
+    /g' | sed -n 's/<\/a>.*//;/<\/script>/d;s/.*href="\([^"]*\)">\(.*\)/\2\
+    \1\
+    /p' | sed 's/<[^>]*>//g'
+- 01:23 Aurelio: massa, fechou
+-
+=== Já que chegamos até aqui, uma função nova seria legal ===
+- 01:24 Aurelio: que tal botar uma funcao nova? aquela que o carinha mandou
+    # ----------------------------------------------------------------------------
+    # Conversão de telefones contendo palavras para apenas números
+    # Uso: zzfonenum [telefone]
+    #
+    # Ex.: zzfonenum 3937-LINUX
+    # Saída: 3937-54689
+    # ----------------------------------------------------------------------------
+- 01:24 Aurelio: essa nao tem o que dar errado :)
+- 01:25 Thobias: massa, pode ser
+- 01:28 Thobias: e o exemplo, acho que seria melhor colocar o echo 3937-LINUX | zzfonenum
+- 01:28 Aurelio: vou melhorar o codigo pra ela funcionar dos dois jeitos
+- 01:32 Aurelio:
+    $ ./dev zzfonenum 234-acde
+    234-2233
+    $ echo 234-acde | ./dev zzfonenum
+    234-2233
+- 01:33 Thobias: cool
+-
+=== A escolha do nome é muito importante ===
+- 01:35 Aurelio: falta um nome melhor...
+- 01:36 Aurelio: zzfoneletra   zzletrafone
+- 01:36 Thobias: mmm
+- 01:36 Thobias: acho que zzfoneletra
+- 01:37 Aurelio: agree
+- 01:37 Thobias: o fone vindo primeiro lembra o telefone, o outro pode ficar meio estranho
+-
+=== Ufa! Anotou a placa daquele trem? ===
+- 01:39 Aurelio: cara, por mim fechou o release entao
+- 01:39 Thobias: como ficou o changelog?
+- 01:40 Aurelio: ah, tem o bug da nomefoto
+- 01:40 Aurelio:
+    # 20061114 <> dicabl: URL e filtro atualizados (valeu sartini)
+    #          <> loteria: URL e filtro atualizados (valeu casali)
+    #          <> ipinternet: filtro atualizado
+    #          <> locale: URL e filtros atualizados
+    #          <> howto: filtro atualizado
+    #          <> security: URL e filtro atualizados para conectiva e mandriva
+    #          <> noticiaslinux: I) URL atualizada (valeu aires)
+    #          <> noticiaslinux: U) URL e filtro atualizados
+    #          <> noticiaslinux: V) filtro atualizado
+    #          <> noticiaslinux: N) filtro atualizado
+    #          <> linuxnews: S) filtro atualizado, O) filtro atualizado
+    #          <> dominiopais: URL e filtro atualizados
+    #          <> sigla: filtro atualizado
+    #          <> dicasl: URL e filtro atualizados
+    #          <> dolar: filtro atualizado
+    #          <> dicportugues: filtro atualizado
+    #          <> pronuncia: agora usa o comando 'say' no mac
+    #          <> google: filtro atualizado
+    #          ++ zzfoneletra (valeu rodolfo)
+- 01:40 Aurelio: meu caralho
+- 01:40 Thobias: esse ai é sério. pode fazer os caras perderem arquivos :(
+- 01:40 Thobias: bah, que animal!! hehe
+- 01:40 Aurelio: tb, tamos aqui desde as 19h
+- 01:40 Aurelio: 18h30
+- 01:41 Aurelio: 7h de zz já, acredita?
+- 01:41 Thobias: foi legal! passou rápido essas 7h
+- 01:41 Aurelio: meu, essa session foi animal!
+- 01:41 Aurelio: muito no gás mesmo
+- 01:42 Thobias: foi bom "relembrar" hehehe
+- 01:42 Aurelio: vou postar algo no blog sobre isso que foi histórico :)
+- 01:43 Thobias: 7h de programação insana de puro shell heheh
+-
+=== Análise do problema e das possíveis soluções ===
+- 01:47 Aurelio: mas o que fazer qdo existir o arquivo
+- 01:47 Aurelio: abortar ou adicionar uma extensão numerica pra diferenciar?
+- 01:47 Thobias: acho que não faz nada e manda uma mesg na tela
+- 01:48 Aurelio: o foda é que daí ele vai ter trocado o nome de metade da galera já
+- 01:48 Aurelio: bem, mas é o melhor. dar uma passada só pra checar vai ser sux
+-
+=== A tomada de decisão e implementação ===
+- 01:54 Thobias: mas na boa, acho que o melhor mesmo é não mover, imprime dizendo que o arquivo destino ja existe e pronto
+- 01:54 Aurelio: pode crer, aborta no meio do caminho e o cara decide o que fazer
+- 01:55 Thobias: e podemos deixar a dica neste caso do cara rodar 2x para contornar o "problema"
+- 02:00 Aurelio:
+    $ ../dev zznomefoto -p videos- *.wmv
+    a.wmv -> videos-001.wmv
+    Arquivo videos-001.wmv já existe. Abortando.
+    $
+- 02:01 Thobias: blz, é isso aí. evita do cara perder os arquivos e deixa a decisão do que fazer como ele
+-
+=== Quase oito horas depois… finalmente terminou ===
+- 02:05 Aurelio: blz, então agora é oficial, FECHOU
+- 02:05 Aurelio: amanhã eu lanço, faço um post no blog e vou até anunciar no br-linux
+- 02:05 Thobias: blz
+- 02:06 Thobias: "que pegada" :)
+- 02:06 Aurelio: pode crer. agora só em 2007 ;)
+- 02:07 Thobias: :)
+-
+=== Minutos depois… ===
+- 02:32 Thobias: pow, que putaria ta dando na globo
+- 02:32 Aurelio: opa
+- 02:33 Aurelio: droga, perdi
+-
+
+
+%!include: _footer.t2t

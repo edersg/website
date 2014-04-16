@@ -1,0 +1,68 @@
+Doações para as Funções ZZ
+
+
+%!includeconf: _config.t2t
+
+% Set page ID
+%!postproc: <BODY <BODY id="donate"
+
+% Coloca ALT nas notas de dinheiro
+%!postproc: '(5-reais.jpg.*) ALT=""'	'\1 ALT="Doe R$ 5,00"'
+%!postproc: '(10-reais.jpg.*) ALT=""'	'\1 ALT="Doe R$ 10,00"'
+%!postproc: '(5-dolares.jpg.*) ALT=""'	'\1 ALT="Doe US$ 5,00"'
+%!postproc: '(10-dolares.jpg.*) ALT=""'	'\1 ALT="Doe US$ 10,00"'
+%!postproc: '(pagseguro.png.*) ALT=""'	'\1 ALT="PagSeguro (UOL)"'
+
+% Replica o ALT como TITLE para aparecer como tooltip
+%!postproc: '(ALT=(".*?"))'		'\1 TITLE=\2'
+
+% Ugly URLs
+%!preproc: 'PAGSEGURO_([0-9]+)'	https://pagseguro.uol.com.br/security/webpagamentos/webpagto.aspx?email_cobranca=verde@aurelio.net&tipo=CP&moeda=BRL&item_id_1=1&item_descr_1=donate+ao+projeto+Funcoess+ZZ&item_quant_1=1&item_frete_1=000&item_valor_1=\1,00
+%!preproc: 'PAYPAL_([0-9]+)'	https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=verde%40aurelio%2enet&item_name=donate%20ao%20projeto%20Funcoes%20ZZ&no_shipping=1&cn=&currency_code=USD&lc=BR&bn=PP%2dBuyNowBF&charset=UTF%2d8&amount=\1
+
+%!include: _menu.t2t
+
+
+_ZZ é um **software livre** (GPL) desde o seu nascimento, e assim queremos que permaneça. Incentivamos a difusão do conhecimento pelo livre acesso ao código-fonte, que pode ser estudado e alterado pelos usuários.
+
+Contamos também com a **colaboração da comunidade** para nos ajudar com sugestões, idéias, relatos de problemas e códigos a serem incorporados no programa. Essa ajuda nunca faltou, sempre tivemos usuários ativos e interessados.
+
+Outra maneira de colaborar é fazendo uma doação para o projeto. Mais que uma forma de agradecimento, sua doação é combustível para **manter a chama acesa**. Os anos passam, prioridades mudam, e precisamos de incentivo para continuar o eterno trabalho de criar, codificar, testar e melhorar. Ah, também precisamos pagar os custos do domínio funcoeszz.net :)
+
+**♥ MUITO OBRIGADO àqueles que já fizeram sua doação:**
+
+- Amadeu Andrade Barbosa Júnior — RJ
+- Antonio Francisco de Souza — MG
+- Augusto Campos — SC
+- Bruno Buys — DF
+- Daniel Duclós — Holanda
+- Douglas José Soares Rodrigues
+- Fabricio Beltram — SP
+- Fernando Medrado — RR
+- Henrique Grolli Bassotto — SC
+- Luis Paulo G. P. de Almeida — SP
+- Marcellus Palmunix — SP
+- Marcio P. Silva
+- Marcos da Silva Sampaio — BA
+- Mario Felipe Rinaldi — SP
+- Projeto Cultura Adiante — SP
+- [Público do Tchêlinux 2008 http://aurelio.net/blog/2008/11/14/e-nois-no-tchelinux-2008/] — RS
+- Ricardo Carvalho — SP
+-
+
+Quer nos ajudar também? Basta clicar no dinheiro:
+
+ |  [img/pagseguro.png]                |  |  |  |  [img/paypal.png]  
+ |  [[img/5-reais.jpg] PAGSEGURO_5]    |  |  |  |  [[img/5-dolares.jpg] PAYPAL_5]  
+ |  [[img/10-reais.jpg] PAGSEGURO_10]  |  |  |  |  [[img/10-dolares.jpg] PAYPAL_10]  
+
+% 	O **PagSeguro** é um site nacional (do portal UOL) de pagamentos seguros pela Internet, que aceita boleto, cartões de crédito e transferências bancárias, pagando em Reais.{{hr}}
+% 	[img/pagseguro-pagamento.png]
+
+% 	O **PayPal** é um site internacional de pagamentos seguros pela Internet, que além de créditos próprios, aceita os cartões Visa, MasterCard e American Express.
+
+**Curiosidade:** ''<br>''
+Além de receber doações, também [já premiamos um colaborador premio.html] com R$ 150 em dinheiro.
+
+
+%!include: _footer.t2t
