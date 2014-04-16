@@ -1,6 +1,10 @@
 
 ''' </div></div><!-- #content, #body -->
-''' <div id="footer"></div>
+''' <div id="footer">
+
+[Edite esta página no GitHub https://github.com/funcoeszz/website/blob/master/%%infile]
+
+''' </div>
 
 % Ⓒ2000-2014 [Aurelio Jargas http://aurelio.net]
 
